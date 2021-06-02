@@ -19,28 +19,33 @@
 			<form method="get" action="DateServlet">
 			  <div class="mb-3">
 			    <label for="annee" class="form-label">Année : </label>
-			    <input type="text" pattern="[0-9]{4,}" required name="annee" class="form-control" id="annee" >
+			    <input type="text" pattern="[0-9]{4,}" required name="annee" class="form-control" id="annee"  min="1000" max="3000">
 			  </div>
 			  <div class="mb-3">
 			    <label for="mois" class="form-label">Mois :</label>
-			    <input type="text" pattern="[0-9]{1,2}" required name="mois" class="form-control" id="mois">
+			    <input type="text" pattern="[0-9]{1,2}" required name="mois" class="form-control" id="mois" min="1" max="12">
 			  </div>
 			  <div class="mb-3">
 			    <label for="jour" class="form-label">Jour : </label>
-			    <input type="text" required name="jour" class="form-control" id="jour">
+			    <input type="text" pattern="[0-9]{1,2}" required name="jour" class="form-control" id="jour" min="1" max="31">
 			  </div>
 		
 			  <div class="mb-3">
 			  	<button type="submit" class="btn btn-primary">Vérifier date valide</button>
 			  </div>
 			  
-			  <!-- Afficher le message d'erreur -->
-			  <% if(request.getAttribute("erreur") != null) { %>
+			  <!-- Afficher le message d'erreur / de confirmation -->
+			  <% if(request.getAttribute("erreurDate") != null) { %>
 			  	<div class="alert alert-danger" role="alert" >
-					<%=request.getAttribute("erreur") %>
+					<%=request.getAttribute("erreurDate") %>
 				</div>
 			  <% } %>
-			  			  
+			  
+			  <% if(request.getAttribute("confimation") != null) { %>
+			  	<div class="alert alert-success" role="alert" >
+					<%=request.getAttribute("confimation") %>
+				</div>
+			  <% } %>			  
 			</form>    
 		</div>
 		
