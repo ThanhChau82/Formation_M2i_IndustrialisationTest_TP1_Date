@@ -16,7 +16,7 @@
 	    </div>
 	    
 	    <div class="col">
-			<form method="get" action="">
+			<form method="get" action="DateServlet">
 			  <div class="mb-3">
 			    <label for="annee" class="form-label">Année : </label>
 			    <input type="text" pattern="[0-9]{4,}" required name="annee" class="form-control" id="annee" >
