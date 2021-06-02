@@ -10,6 +10,7 @@ public class ValidateDate {
 	
 	public List<Integer> createMois31Jours() {
 		List<Integer> mois = new ArrayList();
+		mois.add(1);
 		mois.add(3);
 		mois.add(5);
 		mois.add(7);
@@ -60,7 +61,7 @@ public class ValidateDate {
 	}
 
 	public boolean verifierJour29(int annee, int jour) {
-		if (annee%4 == 0) {
+		if (annee%4 == 0 && annee%100 != 0) {
 			return jour >= 1 && jour <= 29;
 		} else {
 			return jour >=1 && jour <= 28;

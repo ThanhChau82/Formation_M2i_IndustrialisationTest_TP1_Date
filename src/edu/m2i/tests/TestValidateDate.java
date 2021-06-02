@@ -33,7 +33,7 @@ public class TestValidateDate {
 	
 	@Test
 	public void testVerifierMoisOK() {
-		assertTrue(validateDate.verifierAnnee(3));
+		assertTrue(validateDate.verifierMois(3));
 	}
 	
 	@Test
